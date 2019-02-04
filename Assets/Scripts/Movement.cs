@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jumping : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public int moveSpeed = 5;
-    public float jumpForce = 5;
+    public float jumpForce = 10;
     public Transform feetPos;
     public float checkRadius = 0.5f;
     public LayerMask whatIsGround;
@@ -26,7 +26,7 @@ public class Jumping : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, rbody.velocity.y);
+        rbody.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rbody.velocity.y);
         jumpScript();
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);

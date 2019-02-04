@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class Dashing : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public float dashForce;
+    private float dashTime;
+    private float dashTimeCounter;
+    public bool isDashing;
+    private bool isGrounded;
+    public LayerMask whatIsGround;
+    public Transform feetPos;
+    public Rigidbody2D rbody;
+
     void Start()
     {
-        
+        rbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    public void dashScript()
+    {
+
+    }
+
     void Update()
     {
         
